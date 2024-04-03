@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/join.css">
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-    <script src="../js/join.js"></script>
+    <script src="../js/join.js" defer></script>
+    <script src="../js/joinDataCheck.js" defer></script>
 </head>
 <body>
     <div class="innerBox">
@@ -25,8 +26,10 @@
             <form action="" method="post" encType="multipart/form-data">
                 <div class="logo-upload">
                     <p>로고 등록<span> *</span></p>
-                    <label for="logo" class="logo-img-upload"></label>
-                    <input type="file" name="logo" id="logo">
+                    <label for="logo" class="logo-img-upload">
+                        <img src="" alt="logo-image" id="logoImage">
+                    </label>
+                    <input type="file" name="logo" id="logo" onchange="readURL(this)">
                 </div>
                 <div class="resturant-name">
                     <label for="name">식당 이름<span> *</span></label>
@@ -34,7 +37,7 @@
                 </div>
                 <div class="resturant-phone">
                     <label for="phone">전화번호<span> *</span></label>
-                    <input type="phone" name="phone" id="phone" placeholder="식당 번호를 입력해주세요">
+                    <input type="phone" name="phone" id="phone" placeholder="식당 전화번호를 입력해주세요">
                 </div>
                 <div class="resturant-address">
                     <label for="address">
@@ -42,10 +45,14 @@
                         <input type="button" value="주소 찾기" id="find" onclick="getAddress()">
                     </label>
                     
-                    <input type="text" name="address-first" id="address-first" readonly>
-                    <input type="text" name="address-else" id="address-else" placeholder="상세 주소 입력">
+                    <input type="text" name="addressFirst" id="addressFiirst" readonly>
+                    <input type="text" name="addressElse" id="addressElse" placeholder="상세 주소 입력">
                 </div>
-                <input type="button" class="button" value="승인요청">
+                <div class="restaurant-table">
+                    <label for="restaurantTable">식당의 테이블 수<span> *</span></label>
+                    <input type="number" name="restaurantTable" id="restaurantTable" placeholder="식당의 테이블 개수를 입력해주세요">
+                </div>
+                <input type="button" class="button" value="승인요청" onclick="resturantCheck(form)">
             </form>
         </div>
         <footer></footer>

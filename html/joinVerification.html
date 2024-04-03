@@ -6,6 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/join.css">
+    <script src="../js/joinDataCheck.js" defer></script>
 </head>
 <body>
     <div class="innerBox">
@@ -22,15 +23,15 @@
             <h2>원활한 이용을 위해<br>본인인증이 필요합니다</h2>
             <form action="" method="post">
                 <div class="email">
-                    <label for="loginId">이메일<span> *</span></label>
-                    <input type="email" name="loginId" id="loginId" placeholder="이메일을 입력해주세요">
+                    <label for="email">이메일<span> *</span></label>
+                    <input type="email" name="email" id="email" placeholder="이메일을 입력해주세요" onkeyup="emailCheck(form)">
                 </div>
-                <input type="button" class="button-verification" value="인증번호 발송">
+                <input type="button" class="button-verification" value="인증번호 발송" onclick="countDown(form)">
                 <div class="verification">
                     <label for="verification">인증번호 입력<span> *</span></label>
                     <input type="number" name="verification" id="verification">
                 </div>
-                <input type="button" class="button" value="본인인증">
+                <input type="button" class="button" value="본인인증" onclick="verificationCheck(form)">
             </form>
         </div>
         <footer></footer>
