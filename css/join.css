@@ -1,0 +1,51 @@
+label{margin-bottom:10px;}
+label span{color:var(--red);}
+input[type=checkbox]{display: none;}
+.terms label{display: flex;align-items: center;}
+.terms label::before{
+    content: '\f0c8';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 500;
+    color: var(--light-gray);
+    font-size: var(--font-middle);
+    margin-right: var(--padding);
+}
+.terms input:checked + label::before{
+    color:var(--orange);
+    content: '\f14a';
+}
+.button{font-size: var(--font-middle);margin-top: 40px;}
+
+/* 본인 인증 */
+h2{margin:30px 0;text-align: center;font-size: var(--font-big);}
+.button-verification{
+    margin-top:10px;
+    font-size: var(--font-content);
+    background: var(--light-gray);
+    cursor: pointer;
+}
+.button-verification:hover{background: var(--gray);color: var(--white);}
+
+/* 식당 정보 입력 */
+p span{color:var(--red);}
+.logo-img-upload{
+    width: 100px;
+    height: 100px;
+    background: var(--light-gray);
+    margin-top: var(--padding);
+    margin-bottom: 0;
+    cursor: pointer;
+}
+.logo-img-upload:hover{filter: brightness(0.9);}
+.logo-upload input{display: none;}
+.resturant-address label{display: flex;align-items:center;}
+.resturant-address input[type="button"]{
+    background: var(--orange);
+    border: none;
+    padding:5px 10px;
+    color: var(--white);
+    margin-left: auto;
+    cursor: pointer;
+}
+.resturant-address input[type="button"]:hover{background: var(--orange-hover);}
+input[name="address-else"]{margin-top:var(--padding);}

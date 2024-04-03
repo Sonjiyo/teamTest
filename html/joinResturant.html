@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/join.css">
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script src="../js/join.js"></script>
+</head>
+<body>
+    <div class="innerBox">
+        <header>
+            <div>
+                <a href=""><i class="fas fa-home"></i></a>
+            </div>
+            <p>회원가입</p>
+            <div>
+                <a href="#"></a>
+            </div>
+        </header>
+        <div class="container">
+            <h2>식당 정보를<br>입력해주세요</h2>
+            <form action="" method="post" encType="multipart/form-data">
+                <div class="logo-upload">
+                    <p>로고 등록<span> *</span></p>
+                    <label for="logo" class="logo-img-upload"></label>
+                    <input type="file" name="logo" id="logo">
+                </div>
+                <div class="resturant-name">
+                    <label for="name">식당 이름<span> *</span></label>
+                    <input type="name" name="name" id="name" placeholder="식당 이름을 입력해주세요">
+                </div>
+                <div class="resturant-phone">
+                    <label for="phone">전화번호<span> *</span></label>
+                    <input type="phone" name="phone" id="phone" placeholder="식당 번호를 입력해주세요">
+                </div>
+                <div class="resturant-address">
+                    <label for="address">
+                        식당 주소<span> *</span>
+                        <input type="button" value="주소 찾기" id="find" onclick="getAddress()">
+                    </label>
+                    
+                    <input type="text" name="address-first" id="address-first" readonly>
+                    <input type="text" name="address-else" id="address-else" placeholder="상세 주소 입력">
+                </div>
+                <input type="button" class="button" value="승인요청">
+            </form>
+        </div>
+        <footer></footer>
+    </div>
+</body>
+</html>
